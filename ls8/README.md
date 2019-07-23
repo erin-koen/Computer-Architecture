@@ -60,8 +60,9 @@ but you'll have to implement those three above instructions first!
 ## Step 0: IMPORTANT: inventory what is here!
 
 * Make a list of files here.
-- cpu.py - outline for the LS-8 emulator. Needs a constructor.
-- 
+    - cpu.py - outline for the LS-8 emulator. Needs a constructor, and instruction code.
+    - ls8.py - imports and calls CPU function
+    - readme.md - this file. Instructions. 
 * Write a short 3-10-word description of what each file does.
 * Note what has been implemented, and what hasn't.
 * Read this whole file.
@@ -97,7 +98,7 @@ there.
 > the _Memory Address Register_ (MAR) and the _Memory Data Register_ (MDR). The
 > MAR contains the address that is being read or written to. The MDR contains
 > the data that was read or the data to write. You don't need to add the MAR or
-> MDR to your `CPU` class, but they would make handy paramter names for
+> MDR to your `CPU` class, but they would make handy parameter names for
 > `ram_read()` and `ram_write()`, if you wanted.
 
 We'll make use of these helper function later.
@@ -131,7 +132,7 @@ The number of bytes an instruction uses can be determined from the two high bits
 
 ## Step 4: Implement the `HLT` instruction handler
 
-Add the `HLT` instruction define to `cpu.h`.
+Add the `HLT` instruction define to `cpu.py`. file
 
 In `run()` in your switch, exit the loop if a `HLT` instruction is encountered,
 regardless of whether or not there are more lines of code in the LS-8 program
